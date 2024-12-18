@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero">
+    <div class="hero-content">
+        <h1>Craft & Cook</h1>
+        <p class="tagline">Stuck with random ingredients? Let's craft something tasty together 🍝</p>
+        <div class="search-container">
+            <input type="text" id="ingredient-input" placeholder="add your ingredients">
+            <button type="button" id="add-ingredient">Add</button>
+        </div>
+        <div id="ingredients-list"></div>
+        <button type="button" id="search-recipe">Search for Recipes 🥑 </button>
+    </div>
+    <img src="{{ url_for('static', filename='images/plate_left.png') }}" alt="salmon" class="plate-image left-plate">
+    <img src="{{ url_for('static', filename='images/plate_right.png') }}" alt="salad" class="plate-image right-plate">
+</div>
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cagliostro&family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+{% endblock %}
+
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}
